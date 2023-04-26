@@ -1,6 +1,7 @@
 package co.devskills.springbootboilerplate.sqlite;
 
 public class CreditData {
+        private long id;
         private String firstName;
         private String lastName;
         private String address;
@@ -8,13 +9,22 @@ public class CreditData {
         private int balanceOfDebt;
         private boolean complaints;
 
-        public CreditData(String firstName, String lastName, String address, int assessedIncome, int balanceOfDebt, boolean complaints) {
+        public CreditData(long id, String firstName, String lastName, String address, int assessedIncome, int balanceOfDebt, boolean complaints) {
+                this.id = id;
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.address = address;
                 this.assessedIncome = assessedIncome;
                 this.balanceOfDebt = balanceOfDebt;
                 this.complaints = complaints;
+        }
+
+        public long getId() {
+                return id;
+        }
+
+        public void setId(long id) {
+                this.id = id;
         }
 
         public CreditData() {
