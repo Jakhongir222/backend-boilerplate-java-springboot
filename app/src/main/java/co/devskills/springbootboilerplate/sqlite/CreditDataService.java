@@ -1,7 +1,9 @@
 package co.devskills.springbootboilerplate.sqlite;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+@Service
 public class CreditDataService {
 
     private RestTemplate restTemplate;
@@ -9,7 +11,7 @@ public class CreditDataService {
 
     public CreditDataService() {
         this.restTemplate = new RestTemplate();
-        this.creditDataBaseUrl = "https://credit-data-api.com";
+        this.creditDataBaseUrl = "https://infra.devskills.app/credit-data/api/1.0.0";
     }
 
     public CreditData getCreditData(String ssn) {
@@ -39,13 +41,6 @@ public class CreditDataService {
         return creditData;
     }
 
-    public static void main(String[] args) {
-        CreditDataService creditDataService = new CreditDataService();
-        String[] ssns = {"424-11-9327", "553-25-8346", "287-54-7823"};
-        for (String ssn : ssns) {
-            CreditData creditData = creditDataService.getCreditData(ssn);
-            System.out.println(creditData);
-        }
-    }
+
 }
 
