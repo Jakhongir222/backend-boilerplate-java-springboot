@@ -1,4 +1,4 @@
-package co.devskills.app.sqlite;
+package co.devskills.springbootboilerplate.sqlite;
  
 import java.sql.Types;
  
